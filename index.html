@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensaje Protegido</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #formulario {
+            display: block;
+        }
+        #contenido {
+            display: none;
+        }
+    </style>
+    <script>
+        function verificarContraseña() {
+            const contraseña = document.getElementById("contraseña").value;
+            // Cambia "micontraseña" por la contraseña que quieras usar
+            if (contraseña === "micontraseña") {
+                document.getElementById("contenido").style.display = "block";
+                document.getElementById("formulario").style.display = "none";
+            } else {
+                alert("Contraseña incorrecta");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="formulario">
+        <h1>Acceso Restringido</h1>
+        <p>Por favor, ingresa la contraseña para ver el mensaje.</p>
+        <input type="password" id="contraseña" placeholder="Ingresa la contraseña">
+        <button onclick="verificarContraseña()">Acceder</button>
+    </div>
+    <div id="contenido">
+        <h1>¡Bienvenido!</h1>
+        <p>Este es un mensaje secreto protegido por contraseña.</p>
+        <p>Puedes poner aquí cualquier contenido que desees.</p>
+    </div>
+</body>
+</html>
